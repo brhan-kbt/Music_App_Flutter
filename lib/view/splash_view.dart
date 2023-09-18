@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:music_app/view_model/splash_view_model.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -10,9 +12,11 @@ class SplashView extends StatefulWidget {
 
 class _SplashViewState extends State<SplashView> {
   @override
+  final splashM = Get.put(SplashViewModel());
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
     super.initState();
+    splashM.loadView();
   }
 
   @override
@@ -22,7 +26,7 @@ class _SplashViewState extends State<SplashView> {
       body: Center(
         child: Image.asset(
           "assets/img/app_logo.png",
-          width: media.width * 0.5,
+          width: media.width * 0.35,
         ),
       ),
     );
