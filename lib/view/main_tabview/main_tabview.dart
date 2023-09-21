@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:music_app/common/color_extension.dart';
 import 'package:music_app/view/home/home_view.dart';
+import 'package:music_app/view_model/splash_view_model.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -35,7 +37,233 @@ class _MainTabView extends State<MainTabView>
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.sizeOf(context);
+    var splashVM = Get.find<SplashViewModel>();
     return Scaffold(
+      key: splashVM.scaffoldKey,
+      drawer: Drawer(
+        width: media.width * 0.8,
+        backgroundColor: const Color(0xff10121D),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            SizedBox(
+              height: 180,
+              child: DrawerHeader(
+                decoration:
+                    BoxDecoration(color: TColor.primaryText.withOpacity(0.03)),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "assets/img/app_logo.png",
+                      width: media.width * 0.2,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "328\n Songs",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color(0xffC1C0C0), fontSize: 12),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "52\n Albums",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color(0xffC1C0C0), fontSize: 12),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text(
+                              "87\n Artists",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color(0xffC1C0C0), fontSize: 12),
+                            )
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_theme.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Themes",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            // Divider(
+            //   color: TColor.primaryText.withOpacity(0.09),
+            //   indent: 20,
+            //   endIndent: 20,
+            // ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_ring_cut.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Ringtone Cutter",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            Divider(
+              color: TColor.primaryText.withOpacity(0.09),
+              indent: 20,
+              endIndent: 20,
+            ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_sleep_timer.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Sleep Timer",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            Divider(
+              color: TColor.primaryText.withOpacity(0.09),
+              indent: 20,
+              endIndent: 20,
+            ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_eq.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Equalizer",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            Divider(
+              color: TColor.primaryText.withOpacity(0.09),
+              indent: 20,
+              endIndent: 20,
+            ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_driver_mode.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Driver Mode",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            Divider(
+              color: TColor.primaryText.withOpacity(0.09),
+              indent: 20,
+              endIndent: 20,
+            ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_hidden_folder.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Hidden Folder",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            Divider(
+              color: TColor.primaryText.withOpacity(0.09),
+              indent: 20,
+              endIndent: 20,
+            ),
+            ListTile(
+              leading: Image.asset(
+                "assets/img/m_scan_media.png",
+                width: 20,
+                height: 20,
+                fit: BoxFit.contain,
+              ),
+              title: Text(
+                "Scan Media",
+                style: TextStyle(
+                    color: TColor.primaryText.withOpacity(0.9),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500),
+              ),
+              onTap: () {
+                splashVM.closeDrawer();
+              },
+            ),
+            Divider(
+              color: TColor.primaryText.withOpacity(0.09),
+              indent: 20,
+              endIndent: 20,
+            ),
+          ],
+        ),
+      ),
       body: TabBarView(
         controller: controller,
         children: [
