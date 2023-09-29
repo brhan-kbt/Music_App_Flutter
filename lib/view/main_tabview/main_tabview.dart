@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/common/color_extension.dart';
 import 'package:music_app/view/home/home_view.dart';
+import 'package:music_app/view/settings/settings_view.dart';
+import 'package:music_app/view/songs/songs_view.dart';
 import 'package:music_app/view_model/splash_view_model.dart';
 
 class MainTabView extends StatefulWidget {
@@ -266,15 +268,7 @@ class _MainTabView extends State<MainTabView>
       ),
       body: TabBarView(
         controller: controller,
-        children: [
-          HomeView(),
-          Container(
-            child: Center(child: Text("Songs")),
-          ),
-          Container(
-            child: Center(child: Text("Settings")),
-          ),
-        ],
+        children: const [HomeView(), SongsView(), SettingsView()],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: TColor.bg, boxShadow: const [
