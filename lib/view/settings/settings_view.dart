@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/common/color_extension.dart';
+import 'package:music_app/common_widget/icon_text_widget.dart';
 import 'package:music_app/view_model/splash_view_model.dart';
 
 class SettingsView extends StatefulWidget {
@@ -17,39 +18,60 @@ class _SettingsViewState extends State<SettingsView> {
       appBar: AppBar(
         backgroundColor: TColor.bg,
         elevation: 0,
-        automaticallyImplyLeading:
-            false, // Add this line to remove the back button
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                Get.find<SplashViewModel>().openDrawer();
-              },
-              icon: Image.asset(
-                "assets/img/menu.png",
-                width: 20,
-                height: 20,
-                fit: BoxFit.contain,
-              ),
-            ),
-            Text(
-              "Settings",
-              style: TextStyle(
-                color: TColor.primaryText80,
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
+        leading: IconButton(
+          onPressed: () {
+            Get.find<SplashViewModel>().openDrawer();
+          },
+          icon: Image.asset(
+            "assets/img/menu.png",
+            width: 25,
+            height: 25,
+            fit: BoxFit.contain,
+          ),
+        ),
+        title: Text(
+          "Settings",
+          style: TextStyle(
+              color: TColor.primaryText80,
+              fontSize: 17,
+              fontWeight: FontWeight.w600),
         ),
       ),
-      body: ListView(children: const [
-        ListTile(
-          title: Text("All Settings"),
-        )
-      ],),
+      body: ListView(
+        children: [
+          IconTextRow(
+            title: "Display",
+            icon: "assets/img/s_display.png",
+            onTap: () {},
+          ),
+          IconTextRow(
+            title: "Audio",
+            icon: "assets/img/s_audio.png",
+            onTap: () {},
+          ),
+          IconTextRow(
+            title: "Headset",
+            icon: "assets/img/s_headset.png",
+            onTap: () {},
+          ),
+          IconTextRow(
+            title: "Lock Screen",
+            icon: "assets/img/s_lock_screen.png",
+            onTap: () {},
+          ),
+          IconTextRow(
+            title: "Advanced",
+            icon: "assets/img/s_menu.png",
+            onTap: () {},
+          ),
+
+          IconTextRow(
+            title: "Other",
+            icon: "assets/img/s_other.png",
+            onTap: () {},
+          ),
+        ],
+      ),
     );
   }
 }
