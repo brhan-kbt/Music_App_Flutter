@@ -45,6 +45,7 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
               fontSize: 17,
               fontWeight: FontWeight.w600),
         ),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
@@ -61,11 +62,11 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
         ],
       ),
       body: SingleChildScrollView(
-        child:  Column(
-            children: [
-              Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Stack(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Stack(
                 alignment: Alignment.center,
                 children: [
                   ClipRect(
@@ -91,7 +92,6 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            
                             Expanded(
                                 child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,7 +115,6 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600),
                                 ),
-                                
                               ],
                             ))
                           ],
@@ -126,7 +125,6 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
@@ -139,18 +137,15 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600),
                                 ),
-
-                                 Text(
+                                Text(
                                   "Follwers",
                                   style: TextStyle(
-                                      color:
-                                          TColor.primaryText60,
+                                      color: TColor.primaryText60,
                                       fontSize: 10,
                                       fontWeight: FontWeight.w600),
                                 ),
-
-                            ],),
-
+                              ],
+                            ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
@@ -172,9 +167,6 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                                 ),
                               ],
                             ),
-
-                            
-
                             InkWell(
                               borderRadius: BorderRadius.circular(17.5),
                               onTap: () {},
@@ -193,7 +185,6 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                   
                                     Text(
                                       "Follow",
                                       style: TextStyle(
@@ -206,54 +197,45 @@ class _ArtistDetailsViewState extends State<ArtistDetailsView> {
                                 ),
                               ),
                             ),
-                           
                           ],
                         )
                       ],
                     ),
                   )
                 ],
-              ),),
-
-              ViewAllSection(title: "Top Albums", onPressed: () {}),
-
-              SizedBox(
-                height: 130,
-                child: ListView.builder(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: artVM.albumsArr.length,
-                    itemBuilder: (context, index) {
-                      var aObj = artVM.albumsArr[index];
-                      return ArtistAlbumCell(aObj: aObj);
-                    }),
               ),
-
-
-
-              ViewAllSection(title: "Top Songs", onPressed: (){
-
-              }),
-
-              ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  itemCount: artVM.playedArr.length,
+            ),
+            ViewAllSection(title: "Top Albums", onPressed: () {}),
+            SizedBox(
+              height: 130,
+              child: ListView.builder(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: artVM.albumsArr.length,
                   itemBuilder: (context, index) {
-                    var sObj = artVM.playedArr[index];
-                    return AlbumSongRow(
-                      sObj: sObj,
-                      onPressed: () {},
-                      onPressedPlay: () {},
-                      isPlay: index == 0,
-                    );
-                  })
-            ],
-          ),
+                    var aObj = artVM.albumsArr[index];
+                    return ArtistAlbumCell(aObj: aObj);
+                  }),
+            ),
+            ViewAllSection(title: "Top Songs", onPressed: () {}),
+            ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                itemCount: artVM.playedArr.length,
+                itemBuilder: (context, index) {
+                  var sObj = artVM.playedArr[index];
+                  return AlbumSongRow(
+                    sObj: sObj,
+                    onPressed: () {},
+                    onPressedPlay: () {},
+                    isPlay: index == 0,
+                  );
+                })
+          ],
         ),
-      
+      ),
     );
   }
 }

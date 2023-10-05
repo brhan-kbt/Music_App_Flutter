@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:music_app/common/color_extension.dart';
 import 'package:music_app/common_widget/my_playlist_cell.dart';
 import 'package:music_app/common_widget/playlist_songs_cell.dart';
 import 'package:music_app/common_widget/view_all_section.dart';
@@ -19,10 +20,10 @@ class _PlaylistsViewState extends State<PlaylistsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: (){},
+      mini: true,
         backgroundColor: const Color(0xff23273B),
-       child: Padding(padding: EdgeInsets.all(15),
-        child: Image.asset("assets/img/add.png"),),
-      
+       child: Center(child: Icon(Icons.add, color: Colors.amber,)),
+
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,14 +35,14 @@ class _PlaylistsViewState extends State<PlaylistsView> {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               padding: const EdgeInsets.symmetric(vertical: 20),
-              gridDelegate: 
+              gridDelegate:
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.4, crossAxisSpacing: 0, mainAxisSpacing: 0)
-            , 
+            ,
             itemCount: plM.playlistArr.length,
             itemBuilder: (context, index){
               var pObj = plM.playlistArr[index];
               return PlaylistSongsCell(pObj: pObj, onPressed: (){}, onPressedPlay: (){});
-              
+
             },),),
 
 
