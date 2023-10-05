@@ -27,10 +27,17 @@ android {
     compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
+<<<<<<< HEAD
     //  compileOptions {
     //      sourceCompatibility JavaVersion.VERSION_1_8
     //      targetCompatibility JavaVersion.VERSION_1_8
     //  }
+=======
+    // compileOptions {
+    //     sourceCompatibility JavaVersion.VERSION_1_8
+    //     targetCompatibility JavaVersion.VERSION_1_8
+    // }
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
 
     kotlinOptions {
         jvmTarget = '1.8'
@@ -40,6 +47,10 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    lintOptions{
+        disable 'InvalidPackage'
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.music_app"
@@ -47,7 +58,11 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 21
+<<<<<<< HEAD
         targetSdkVersion 33
+=======
+        targetSdkVersion flutter.targetSdkVersion
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -59,15 +74,24 @@ android {
             signingConfig signingConfigs.debug
             shrinkResources false
             minifyEnabled = true
+<<<<<<< HEAD
      
         }
     }
 
+=======
+        }
+    }
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
      lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
     buildFeatures {
         viewBinding true
     }

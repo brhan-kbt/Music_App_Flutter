@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -26,6 +30,10 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/music_widget_info" />
         </receiver>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
         <activity
             android:name="com.ryanheise.audioservice.AudioServiceActivity"
             android:exported="true"
@@ -54,6 +62,10 @@
                 <category android:name="android.intent.category.APP_MUSIC" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
@@ -61,6 +73,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
+<<<<<<< HEAD
         <service android:name="com.ryanheise.audioservice.AudioService"
             android:foregroundServiceType="mediaPlayback"
             android:exported="true" tools:ignore="Instantiatable">
@@ -76,5 +89,23 @@
             <action android:name="android.intent.action.MEDIA_BUTTON" />
         </intent-filter>
         </receiver> 
+=======
+              <!-- ADD THIS "SERVICE" element -->
+            <service android:name="com.ryanheise.audioservice.AudioService"
+                android:foregroundServiceType="mediaPlayback"
+                android:exported="true" tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+            </service>
+
+            <!-- ADD THIS "RECEIVER" element -->
+            <receiver android:name="com.ryanheise.audioservice.MediaButtonReceiver"
+                android:exported="true" tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+            </receiver>
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
     </application>
 </manifest>

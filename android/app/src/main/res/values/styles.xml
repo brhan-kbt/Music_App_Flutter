@@ -16,7 +16,11 @@
         <item name="android:windowBackground">?android:colorBackground</item>
     </style>
 
+<<<<<<< HEAD
     <style name="Widget.Android.AppWidget.Container" parent="android:Widget">
+=======
+      <style name="Widget.Android.AppWidget.Container" parent="android:Widget">
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
         <item name="android:id">@android:id/background</item>
         <item name="android:background">?android:attr/colorBackground</item>
     </style>

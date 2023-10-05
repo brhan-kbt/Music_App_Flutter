@@ -42,6 +42,10 @@ dependencies:
   just_audio: ^0.9.34
   get_it: ^7.6.0
   cached_network_image: ^3.2.3
+<<<<<<< HEAD
+=======
+  audio_session: ^0.1.7
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
 
 dev_dependencies:
   flutter_test:

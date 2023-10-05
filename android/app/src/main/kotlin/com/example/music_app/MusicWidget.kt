@@ -8,6 +8,10 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.RemoteViews
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
 class MusicWidget: AppWidgetProvider() {
 
     override fun onUpdate(
@@ -23,11 +27,18 @@ class MusicWidget: AppWidgetProvider() {
     }
 }
 
+<<<<<<< HEAD
 
 internal fun updateAppWidget(context: Context?,
         appWidgetManager: AppWidgetManager?,
         appWidgetId: Int) {
         
+=======
+internal fun updateAppWidget(context: Context?,
+        appWidgetManager: AppWidgetManager?,
+        appWidgetId: Int) {
+
+>>>>>>> 289fa64671efd7d83e7dab8a61b86040574ff079
     val widgetText = context?.getString(R.string.appwidget_text)
     val views = RemoteViews(context?.packageName, R.layout.music_widget)
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse("app://music_app/play"))
